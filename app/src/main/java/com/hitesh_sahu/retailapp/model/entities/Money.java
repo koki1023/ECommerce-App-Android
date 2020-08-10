@@ -15,8 +15,7 @@ import java.util.Locale;
 
 public class Money {
 
-    private static final Currency INR = Currency.getInstance(new Locale("en",
-            "in"));
+    private static final Currency JPY = Currency.getInstance("JPY");
     private static final RoundingMode DEFAULT_ROUNDING = RoundingMode.HALF_EVEN;
 
     private BigDecimal amount;
@@ -35,7 +34,7 @@ public class Money {
     }
 
     public static Money rupees(BigDecimal amount) {
-        return new Money(amount, INR);
+        return new Money(amount, JPY);
     }
 
     public BigDecimal getAmount() {

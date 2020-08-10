@@ -58,7 +58,6 @@ public class ECartHomeActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
 
     private TextView checkOutAmount, itemCountTextView;
-    private TextView offerBanner;
     private AVLoadingIndicatorView progressBar;
 
     private NavigationView mNavigationView;
@@ -77,8 +76,6 @@ public class ECartHomeActivity extends AppCompatActivity {
 
         //	makeFakeVolleyJsonArrayRequest();
 
-        offerBanner = ((TextView) findViewById(R.id.new_offers_banner));
-
         itemCountTextView = (TextView) findViewById(R.id.item_count);
         itemCountTextView.setSelected(true);
         itemCountTextView.setText(String.valueOf(itemCount));
@@ -86,7 +83,6 @@ public class ECartHomeActivity extends AppCompatActivity {
         checkOutAmount = (TextView) findViewById(R.id.checkout_amount);
         checkOutAmount.setSelected(true);
         checkOutAmount.setText(Money.rupees(checkoutAmount).toString());
-        offerBanner.setSelected(true);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -307,11 +303,8 @@ public class ECartHomeActivity extends AppCompatActivity {
         if (itemCount == 0) {
 
             findViewById(R.id.checkout_item_root).setVisibility(View.GONE);
-            findViewById(R.id.new_offers_banner).setVisibility(View.VISIBLE);
-
         } else {
             findViewById(R.id.checkout_item_root).setVisibility(View.VISIBLE);
-            findViewById(R.id.new_offers_banner).setVisibility(View.GONE);
         }
     }
 
