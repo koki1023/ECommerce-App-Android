@@ -10,7 +10,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "28.0.2"
 
     defaultConfig {
         applicationId "com.hitesh_sahu.retailshop"
@@ -24,6 +24,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+repositories {
+    maven { url 'https://cdn.reproio.com/android' }
 }
 
 dependencies {
@@ -48,4 +52,5 @@ dependencies {
     compile 'com.wang.avi:library:1.0.5'
     compile 'com.nineoldandroids:library:2.4.0'
 
+    compile 'io.repro:repro-android-sdk:5.0.4'
 }
